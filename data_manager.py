@@ -16,7 +16,7 @@ class DataManager:
         data = response.json()
         self.destination_data = data["prices"]
         # 3. Try importing pretty print and printing the data out again using pprint() to see it formatted.
-        pprint(data)
+        #pprint(data)
         return self.destination_data
 
     # 6. In the DataManager Class make a PUT request and use the row id from sheet_data
@@ -33,4 +33,5 @@ class DataManager:
                 url=f"{SHEETY_PRICES_ENDPOINT_PUT}/{city['id']}",
                 json=new_data
             )
-            print(response.text)
+            #print(response.text)
+
