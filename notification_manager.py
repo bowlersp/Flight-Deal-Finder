@@ -28,15 +28,13 @@ class NotificationManager:
     #     print(message.sid)
 
 
-    def send_email(self, flight_data):
+    def send_email(self):
         with smtplib.SMTP("smtp.mail.yahoo.com") as connection:
             connection.starttls()
             connection.login(MY_EMAIL, MY_PASSWORD)
             connection.sendmail(
                 from_addr=MY_EMAIL,
                 to_addrs=MY_EMAIL,
-                msg=f"Subject: Low Price Alert On Flights!\n\n
-                This is the body of the message!"    
+                msg=f"Subject: Low Price Alert On Flights\n\n"
+                    f"This is the body of the message"
             )
-
-
