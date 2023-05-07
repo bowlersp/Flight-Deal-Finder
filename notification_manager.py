@@ -28,7 +28,7 @@ class NotificationManager:
     #     print(message.sid)
 
 
-    def send_email(self):
+    def send_email(self, message):
         with smtplib.SMTP("smtp.mail.yahoo.com") as connection:
             connection.starttls()
             connection.login(MY_EMAIL, MY_PASSWORD)
@@ -36,5 +36,5 @@ class NotificationManager:
                 from_addr=MY_EMAIL,
                 to_addrs=MY_EMAIL,
                 msg=f"Subject: Low Price Alert On Flights\n\n"
-                    f"This is the body of the message"
+                    f"{message}"
             )
